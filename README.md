@@ -1,5 +1,8 @@
-# React/Redux/Router Starter Project
+# Authentication/Management Project
 
-> Provided for the students of the [Bottega Code School](https://bottega.tech/)
+Demonstrates user authentication and account management in the REACT-Redux framework.
 
-*Fork from [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)*
+>Requires running (https://github.com/TechenPro/prop-server) with MongoDB as the linked server.
+>Default port is 3000 for the site and 3090 for the server.
+
+*Built using [js-builder] (https://github.com/bottega-code-school/js-builder)*
