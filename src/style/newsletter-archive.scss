@@ -1,4 +1,5 @@
 .newsletter-archive {
+  margin-top: 3.85rem;
   grid-row: archive-s/archive-e;
   grid-column: archive-s/archive-e;
   display: grid;
@@ -12,38 +13,35 @@
     border-bottom: 0.1rem solid $color-gray-E6;
     padding-bottom: 0.4rem;
   }
-
-  &__items {}
 }
 
 .archive-items {
   margin-top: 1.6rem;
   display: grid;
   grid-row-gap: 1.6rem;
-  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  align-content: start;
 
-  &__item {}
-}
+  .archive-item {
+    display: grid;
+    grid-row-gap: 3px;
 
-.archive-item {
-  display: grid;
-  grid-row-gap: 3px;
+    &__title {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      transition: all 0.2s ease;
 
-  &__title {
-    font-size: 1.4rem;
-    line-height: 1.7rem;
-    transition: all 0.2s ease;
-
-    &:hover {
-      font-size: 1.6rem;
-      font-weight: 500;
+      &:hover {
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
     }
-  }
 
-  &__date {
-    color: $color-red-BA;
-    font-family: $font-encode-cond;
-    font-size: 1.3rem;
-    line-height: 1.6rem;
+    &__date {
+      color: $color-red-BA;
+      font-family: $font-encode-cond;
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+    }
   }
 }
