@@ -28,6 +28,7 @@ export function signIn(fields, success) {
       .then(response => {
         const { token } = response.data;
         localStorage.setItem('token', token);
+        localStorage.getItem('token');
         dispatch({
           type: AUTHENTICATE_USER,
           payload: response.data
