@@ -1,13 +1,13 @@
 // INPUT
 
-.form-input {
+.form-input,
+.form-textarea {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 4fr;
   align-items: center;
-  width: 75rem;
+  width: 100%;
   justify-content: center;
-  transform: translateX(-10%);
 
   &__title {
     grid-row: 1/-1;
@@ -20,7 +20,8 @@
   }
 }
 
-.form-input {
+.form-input,
+.form-textarea {
   &__title {
     color: $color-red-BA;
     font-size: 1.8rem;
@@ -33,12 +34,36 @@
     width: 100%;
     border: 1px solid $color-gray-E6;
     border-radius: 0.5rem;
-    padding-left: 2rem;
     font-size: 1.6rem;
     font-weight: 500;
   }
 }
+
+.form-textarea {
+  &__title {
+    align-self: start;
+  }
+
+  &__input {
+    resize: none;
+    height: 35.5rem;
+    padding-top: 1rem;
+  }
+}
 // BUTTON
+.form-button,
+.form-button-small {
+  &__button {
+    transition: all .2s ease;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      transform: scale(.95);
+    }
+  }
+}
+
 .form-button {
   &__button {
     height: 4rem;
@@ -58,5 +83,22 @@
       color: $color-red-BA;
       background-color: white;
     }
+  }
+}
+
+.form-button-small {
+  &__button {
+    border-radius: 1.6rem;
+    border: 1px solid $color-gray-4D;
+    width: 13rem;
+    height: 2.4rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+
+  &__danger {
+    border: 1px solid $color-red-BA;
+    color: white;
+    background-color: $color-red-BA;
   }
 }
