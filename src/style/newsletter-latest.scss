@@ -6,6 +6,7 @@
   grid-template-columns: [s] 1fr [e];
   border: 1px solid $color-gray-E6;
   border-radius: 0.5rem;
+  background-color: #121212;
 
   & > * {
     grid-column: s/e;
@@ -27,8 +28,9 @@
   }
 
   &__image {
+    // mix-blend-mode: multiply;
     grid-row: s/m;
-    z-index: -10;
+    // z-index: -10;
   }
 
   &__body {
