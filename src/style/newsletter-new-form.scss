@@ -16,6 +16,7 @@
   }
 
   &__body {
+    grid-row: 3;
     margin-top: 2rem;
   }
 
@@ -30,5 +31,11 @@
 
   &__cancel {
     transform: translate(-125%);
+  }
+
+  &__image {
+    grid-row: 3;
+    grid-column: s/e;
+    align-self: end;
   }
 }

@@ -9,7 +9,7 @@ class NewNewsletter extends Component {
     }
 
     onCancel = () => {
-      console.log('trying to cancel');
+      this.props.history.push('/dashboard');
     }
 
     render() {
