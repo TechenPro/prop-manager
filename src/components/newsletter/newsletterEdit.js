@@ -14,7 +14,6 @@ class EditNewsletter extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.match.params.id);
     this.props.fetchNewsletterWithId(this.props.match.params.id);
   }
 
@@ -26,6 +25,8 @@ class EditNewsletter extends Component {
           onCancel={() => this.onCancel()}
           onSubmit={event => this.onSubmit(event)}
           formTitle='Edit Newsletter'
+          fieldOneTitle="Newsletter Title"
+          fieldTwoTitle="Body"
         />
       </div>
     );

@@ -39,7 +39,7 @@ function main() {
             <Route path='/signup' component={Signup}/>
 
             {/*DASHBOARD*/}
-            <Route path='/dashboard' component={Dashboard}/>
+            <Route path='/dashboard' component={requireAuth(Dashboard)}/>
 
             {/*NEWSLETTER*/}
             <Route path='/newsletter/new' component={requireAuth(NewNewsletter)}/>
@@ -47,7 +47,7 @@ function main() {
             <Route path='/newsletter/detail/:id' component={requireAuth(NewsletterDetail)}/>
 
             {/*REQUESTS*/}
-            <Route path='/request/new' component={NewRequest}/>
+            <Route path='/request/new' component={requireAuth(NewRequest)}/>
 
           </Layout>
         </Switch>
