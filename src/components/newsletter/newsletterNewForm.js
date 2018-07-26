@@ -6,13 +6,21 @@ import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
 import TextLink from "../textLink";
 
 class NewNewsletterForm extends Component {
+
   render() {
 
-    const { handleSubmit } = this.props;
+    const { handleSubmit, formTitle, newsletterToEdit } = this.props;
+
+    let [title, body, imageUrl] = Array(3).fill(null)
+    if(newsletterToEdit) {
+      title = newsletterToEdit.title;
+      body = newsletterToEdit.body;
+      imageUrl = newsletterToEdit.imageUrl;
+    }
 
     return (
       <form onSubmit={handleSubmit} className="new-newsletter-form">
-        <FormTitle className="new-newsletter-form__title" text="New Newsletter" />
+        <FormTitle className="new-newsletter-form__title" text={formTitle}/>
         <Field
           className="new-newsletter-form__newsletter-title"
           placeholder="Newsletter Title"
@@ -20,6 +28,7 @@ class NewNewsletterForm extends Component {
           type="text"
           title="Newsletter Title"
           component={FormInput}
+          editValue={title ? title : null}
         />
         <Field
           className="new-newsletter-form__body"
@@ -28,6 +37,7 @@ class NewNewsletterForm extends Component {
           type="text"
           title="Body"
           component={FormTextArea}
+          editValue={body ? body : null}
         />
         <Field
         className='new-newsletter-form__submit'
@@ -54,6 +64,7 @@ class NewNewsletterForm extends Component {
           type='file'
           title='Image'
           component={FormImage}
+          imageUrl={imageUrl}
         />
 
       </form>
