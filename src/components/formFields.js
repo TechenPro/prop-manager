@@ -30,10 +30,9 @@ export class FormTextArea extends Component {
           type={type}
           {...input}
           placeholder={placeholder}
-          value={editValue ? editValue : ''}
-        >
+          value={editValue ? editValue : input.value}
+        />
 
-        </textarea>
       </div>
     )
   }
@@ -63,8 +62,10 @@ export class FormButton extends Component {
 export class FormImage extends Component {
 
   handleSelectedImage = (event) => {
+    const { input: {onChange} } = this.props;
     var image = document.getElementById('newsletter-new-image');
     image.src = URL.createObjectURL(event.target.files[0]);
+    onChange(event.target.files[0]);
   }
 
   render() {
