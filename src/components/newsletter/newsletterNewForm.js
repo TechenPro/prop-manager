@@ -9,18 +9,11 @@ class NewNewsletterForm extends Component {
 
   render() {
 
-    const { handleSubmit, formTitle, newsletterToEdit } = this.props;
+    const { handleSubmit, formTitle} = this.props;
     const {
       fieldOnePlaceholder, fieldOneTitle,
       fieldTwoPlaceholder, fieldTwoTitle
     } = this.props;
-
-    let [title, body, imageUrl] = Array(3).fill(null)
-    if(newsletterToEdit) {
-      title = newsletterToEdit.title;
-      body = newsletterToEdit.body;
-      imageUrl = newsletterToEdit.imageUrl;
-    }
 
     return (
       <form onSubmit={handleSubmit} className="new-newsletter-form">
@@ -32,7 +25,6 @@ class NewNewsletterForm extends Component {
           type="text"
           title={fieldOneTitle}
           component={FormInput}
-          editValue={title ? title : null}
         />
         <Field
           className="new-newsletter-form__body"
@@ -41,7 +33,6 @@ class NewNewsletterForm extends Component {
           type="text"
           title={fieldTwoTitle}
           component={FormTextArea}
-          editValue={body ? body : null}
         />
         <Field
         className='new-newsletter-form__submit'
@@ -68,7 +59,6 @@ class NewNewsletterForm extends Component {
           type='file'
           title='Image'
           component={FormImage}
-          imageUrl={imageUrl}
         />
 
       </form>

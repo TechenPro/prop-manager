@@ -1,16 +1,24 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
+import * as actions from '../../actions';
 
 import NewNewsletterForm from "./newsletterNewForm";
 
 class NewNewsletter extends Component {
-  onSubmit = fields => {
-    // if(button == 'submit') {
-    //   // save new newsletter on the backend. perform a post request here.
-    //   console.log('trying to submit to backend.');
-    // }
-    this.props.history.push("/dashboard");
-  };
 
+  onSubmit = fields => {
+
+    const { title, body, image } = fields;
+
+    var formData = new FormData();
+    formData.append('title', title);
+    formData.append('body', body);
+    formData.append('image', image);
+
+    this.props.createNewNewsletter(formData, () => {
+        this.props.history.push("/dashboard");
+    })
+  };
   onCancel = () => {
     this.props.history.push("/dashboard");
   };
@@ -31,5 +39,7 @@ class NewNewsletter extends Component {
     );
   }
 }
+
+NewNewsletter = connect(null, actions)(NewNewsletter);
 
 export default NewNewsletter;
