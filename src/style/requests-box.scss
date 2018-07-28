@@ -2,21 +2,54 @@
   align-content: center;
   height: 16rem;
   width: 16rem;
-  border: 0.15rem solid $color-red-BA;
-  border-radius: 0.5rem;
+  border: .15rem solid $color-red-BA;
+  border-radius: .5rem;
   color: $color-red-BA;
   display: grid;
   justify-items: center;
   grid-template-rows: [s] 8.1rem [m] 2.3rem [e];
   grid-template-columns: [s] 1fr [e];
 
-  &__count {
+  &:hover {
+    border-color: $color-red-BA;
+    background-color: white;
+
+    .requests-box__point {
+      display: none;
+    }
+
+    .requests-box__count {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+
+    .requests-box__icon {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .requests-box__title {
+      color: $color-red-BA;
+    }
+
+  }
+
+  &__count,
+  &__icon {
+    transition: all .3s ease;
     align-self: end;
     font-size: 7rem;
     line-height: 8.1rem;
     margin-bottom: 1rem;
     grid-row: s/m;
     grid-column: s/e;
+    transform: translateX(0);
+  }
+
+  &__icon {
+    transform: translateX(-100px);
+    opacity: 0;
+    font-size: 5rem;
   }
 
   &__title {
@@ -36,7 +69,7 @@
     justify-self: end;
     align-self: center;
     transform: translateX(52%) rotate(45deg);
-    border: 0.15rem solid $color-red-BA;
+    border: .15rem solid $color-red-BA;
     border-bottom: none;
     border-left: none;
   }
@@ -47,8 +80,9 @@
   border-color: $color-red-BA;
 
   .requests-box {
-    &__count,
-    &__title {
+
+    &__title,
+    &__count {
       color: white;
     }
 
@@ -63,8 +97,9 @@
   border-color: $color-gray-E6;
 
   .requests-box {
-    &__count,
-    &__title {
+
+    &__title,
+    &__count {
       color: $color-gray-4D;
     }
 
