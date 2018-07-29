@@ -7,6 +7,8 @@ import NewsletterArchive from './newsletterArchive';
 import NewsletterLatest from './newsletterLatest';
 import Button from '../button';
 
+import RequireAdmin from '../requireAdmin';
+
 class NewsletterGrid extends Component {
 
   handleAddNewsletter = () => {
@@ -14,16 +16,17 @@ class NewsletterGrid extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.props.fetchNewsletters();
-    }, 1000);
+    console.log('Mounted Newsletters');
+    this.props.fetchNewsletters()
   }
 
   render() {
 
     return (
       <div className = 'newsletter-grid'>
-      <Button className='newsletter-grid__button' icon='fas fa-plus' callback={() => this.handleAddNewsletter()}/>
+      <RequireAdmin>
+        <Button className='newsletter-grid__button' icon='fas fa-plus' callback={() => this.handleAddNewsletter()}/>
+      </RequireAdmin>
       <NewsletterBox {...this.props.latestNewsletter}/>
       <NewsletterArchive/>
       <NewsletterLatest {...this.props.latestNewsletter}/>

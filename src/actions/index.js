@@ -6,7 +6,8 @@ import {
 import {
   fetchNewsletters,
   fetchNewsletterWithId,
-  createNewNewsletter
+  createNewNewsletter,
+  editNewsletter
 } from './newsletter';
 
 import {
@@ -15,6 +16,10 @@ import {
   fetchRequests,
   changeStatus
 } from './requests';
+
+import {
+  updateHeader
+} from './header';
 
 export {
   signUp,
@@ -25,5 +30,7 @@ export {
   createNewRequest,
   fetchRequests,
   changeStatus,
-  createNewNewsletter
+  createNewNewsletter,
+  editNewsletter,
+  updateHeader
 };

@@ -12,7 +12,7 @@ class NewNewsletterForm extends Component {
     const { handleSubmit, formTitle} = this.props;
     const {
       fieldOnePlaceholder, fieldOneTitle,
-      fieldTwoPlaceholder, fieldTwoTitle
+      fieldTwoPlaceholder, fieldTwoTitle,
     } = this.props;
 
     return (

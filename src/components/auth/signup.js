@@ -13,6 +13,10 @@ class Signup extends Component {
 
   }
 
+  componentDidMount() {
+    this.props.updateHeader('Welcome to the HOA Manager!', 'Please Login to Continue', false);
+  }
+
   render() {
     return (
       <div className='sign-up'>

@@ -14,6 +14,7 @@ class RequestsGrid extends Component {
     }
 
     componentDidMount() {
+        console.log('Mounted Requests');
         this.props.fetchRequests()
     }
 
